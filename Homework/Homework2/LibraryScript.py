@@ -1,3 +1,10 @@
+"""
+Christian Stremel: christian.stremel@stud.th-deg.de
+Timmy Bauer: timmy.bauer@stud.th-deg.de
+Tim Fastert: tim.fastert@stud.th-deg.de
+
+"""
+
 import json
 import tkinter as tk
 from tkinter import filedialog
