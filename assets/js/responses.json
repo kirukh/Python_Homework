@@ -1,0 +1,34 @@
+[
+  {
+    "pattern": "hallo|hi",
+    "response": "Hallo! Wie kann ich dir helfen?"
+  },
+  {
+    "pattern": "projekt",
+    "response": "Erzähle mir mehr zu deinem Projekt."
+  },
+  {
+    "pattern": "zimmer buchen|buchung",
+    "response": "Möchten Sie ein Einzel- oder Doppelzimmer buchen?"
+  },
+  {
+    "pattern": "preis|kosten",
+    "response": "Unser Standardzimmer kostet 100€ pro Nacht. Möchten Sie buchen?"
+  },
+  {
+    "pattern": "wifi|wlan|internet",
+    "response": "Unser Hotel bietet kostenloses WLAN im gesamten Gebäude."
+  },
+  {
+    "pattern": "frühstück|breakfast",
+    "response": "Das Frühstücksbuffet ist inklusive und wird von 7 bis 10 Uhr serviert."
+  },
+  {
+    "pattern": "check-in",
+    "response": "Check-in ist ab 14:00 Uhr möglich. Wann möchten Sie anreisen?"
+  },
+  {
+    "pattern": "check-out",
+    "response": "Check-out ist bis 11:00 Uhr. Benötigen Sie einen späteren Checkout?"
+  }
+]

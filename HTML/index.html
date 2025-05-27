@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Web Page</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
+    <title>IT-Reparaturservice | Startseite</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
     <header>
-      <a href="index.html">
-        <img src="/MEDIA/home.png" alt="Home" id="home"
-      /></a>
-      <a href="rooms.html"> <button id="rooms">Rooms</button></a>
-      <a href="restaurant.html"> <button id="restaurant">Restaurant</button></a>
-      <a href="about.html"> <button id="aboutUs">About Us</button></a>
-      <a href="cart.html">
-        <img src="/MEDIA/cart.png" alt="Cart" id="cart"
-      /></a>
+      <img
+        src="../assets/img/logo.svg"
+        alt="Logo IT-Reparaturservice"
+        class="logo"
+      />
+
+      <button id="menu-toggle" aria-label="Menü öffnen">☰</button>
+
+      <nav id="main-nav">
+        <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="about.html">Über uns</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+          <li><a href="legal.html">Impressum</a></li>
+        </ul>
+      </nav>
+
+      <button id="darkmode-toggle" aria-label="Dark Mode umschalten">🌙</button>
     </header>
     <main>
-      <section>
-        <h2>About Me</h2>
-        <p>This is a simple web page created as an example.</p>
-        <a href="about.html">
-          <button id="aboutMe">Learn More About Me</button>
-        </a>
-      </section>
-      <section>
-        <h2>Contact</h2>
-        <p>Email:</p>
+      <section class="hero">
+        <h1>Schnelle Hilfe bei IT-Problemen</h1>
+        <p>PC kaputt? Wir helfen sofort – lokal, zuverlässig und günstig.</p>
+        <a href="contact.html" class="btn">Jetzt Kontakt aufnehmen</a>
       </section>
     </main>
+
+    <footer>
+      <p>&copy; 2025 IT-Reparaturservice</p>
+    </footer>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>

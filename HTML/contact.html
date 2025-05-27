@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Über uns | IT-Reparaturservice</title>
+    <title>Kontakt | IT-Reparaturservice</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
   </head>
   <body>
@@ -30,13 +30,19 @@
     </header>
 
     <main>
-      <h1>Über uns</h1>
-      <p>
-        Ich bin Max Mustermann, IT-Techniker mit über 10 Jahren Erfahrung in der
-        Reparatur von Computern, Laptops und Netzwerktechnik. Mein Ziel ist es,
-        schnelle und zuverlässige Hilfe anzubieten – ohne Fachchinesisch und zu
-        fairen Preisen.
-      </p>
+      <h1>Kontakt</h1>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Nachricht:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Absenden</button>
+      </form>
     </main>
 
     <footer>
