@@ -1,0 +1,480 @@
+/* Body Style (unverändert beibehalten) */
+body {
+  font-family: "Arial", "sans-serif";
+  line-height: 1.6;
+  background-color: #f9fafb;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1,
+h2,
+h3 {
+  color: #1a202c;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #3b82f6;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1em;
+  color: #4b5563;
+  margin-bottom: 40px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #ffffff;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative; /* Wichtig für die Positionierung der mobilen Nav */
+  z-index: 1000; /* Stellt sicher, dass die Navbar über anderen Inhalten liegt */
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex; /* Sorgt dafür, dass die Links nebeneinander liegen */
+}
+
+.nav-links a {
+  color: #4b5563;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #3b82f6;
+}
+
+/* Burger Menu Toggle */
+.menu-toggle {
+  display: none; /* Standardmäßig ausgeblendet auf großen Bildschirmen */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  /* Optional: margin-right, um Abstand zum Rand zu schaffen, wenn nur Logo und Toggle sichtbar sind */
+}
+
+.burger-line {
+  width: 25px;
+  height: 3px;
+  background-color: #4b5563;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+  display: block; /* Stellt sicher, dass jede Linie sichtbar ist */
+}
+
+/* Animation für das Burger-Icon zum X */
+.menu-toggle.active .burger-line.top {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .burger-line.middle {
+  opacity: 0;
+}
+
+.menu-toggle.active .burger-line.bottom {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  display: none; /* Standardmäßig ausgeblendet */
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 15px 20px;
+  position: absolute;
+  top: 60px; /* Anpassen an die Höhe deiner Navbar (ca. 15px padding oben + 15px padding unten + Logo/Link-Höhe) */
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 999; /* Etwas niedriger als die Navbar, aber über dem Rest des Inhalts */
+  border-top: 1px solid #eee; /* Eine feine Linie zur Trennung von der Navbar */
+  animation: slideDown 0.3s ease-out; /* Optional: Eine kleine Animation beim Öffnen */
+}
+
+.mobile-nav.active {
+  display: flex;
+}
+
+/* Optional: Animation für das Aufklappen */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav a {
+  color: #4b5563;
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  text-align: center; /* Zentriert die Links in der mobilen Nav */
+}
+
+.mobile-nav a:last-child {
+  border-bottom: none;
+}
+
+/* Rest deines CSS (Abschnitte, Karten, Buttons, Formulare, Chat, Footer) */
+.section {
+  padding: 60px 0;
+}
+
+.hero {
+  background-color: #e0f2fe;
+  padding: 80px 0;
+}
+
+.grid-container {
+  display: grid;
+  gap: 30px;
+  align-items: center;
+}
+
+.grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Cards */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: #3b82f6;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.card-text {
+  padding-left: 0;
+  text-align: center;
+}
+.card-list {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.about-text {
+  text-align: left;
+}
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+input[type="betreff"],
+textarea {
+  width: calc(100% - 22px);
+  padding: 12px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="betreff"]:focus,
+textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #2563eb;
+}
+
+#chat {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  height: 400px;
+  overflow-y: auto;
+  margin: 40px auto 20px auto;
+  max-width: 700px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.chat-input-area {
+  display: flex;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  gap: 10px;
+}
+
+#userInput {
+  flex-grow: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.chat-input-area button {
+  padding: 12px 20px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-input-area button:hover {
+  background-color: #2563eb;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9em;
+  margin-top: auto;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer a {
+  color: #dbeafe;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #3b82f6;
+}
+
+/* Chat messages */
+.chat-message {
+  padding: 10px 15px;
+  border-radius: 18px;
+  margin-bottom: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.chat-message.user {
+  background-color: #3b82f6;
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-message.bot {
+  background-color: #e2e8f0;
+  color: #333;
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+}
+
+@keyframes dot-blink {
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Desktop-Nav-Links auf kleinen Bildschirmen ausblenden */
+  }
+
+  .menu-toggle {
+    display: block; /* Burger-Icon auf kleinen Bildschirmen anzeigen */
+  }
+
+  .navbar .container {
+    flex-wrap: nowrap; /* Verhindert Umbruch des Logos und Toggles */
+  }
+
+  .hero .grid-2,
+  .grid-2,
+  .grid-3 {
+    /* Auch grid-3 anpassen */
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .section-title,
+  .section-subtitle {
+    text-align: center !important;
+  }
+
+  .hero div:last-child {
+    margin-top: 30px;
+  }
+
+  /* Formular-Anpassungen für kleinere Bildschirme */
+  form {
+    padding: 20px; /* Weniger Padding auf mobilen Geräten */
+    margin: 20px auto; /* Weniger Margin */
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  input[type="time"],
+  input[type="betreff"],
+  textarea {
+    width: calc(100% - 22px);
+  }
+
+  .chat-input-area {
+    flex-direction: column; /* Input und Button untereinander */
+    align-items: stretch;
+    margin-bottom: 20px;
+  }
+
+  #userInput {
+    margin-bottom: 10px;
+  }
+
+  .chat-input-area button {
+    width: 100%;
+  }
+
+  .chat-message {
+    max-width: 90%;
+  }
+}
+
+/* Zusätzliche Media Query für sehr kleine Bildschirme (optional) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 2em;
+  }
+
+  .navbar .logo {
+    font-size: 1.5em;
+  }
+}

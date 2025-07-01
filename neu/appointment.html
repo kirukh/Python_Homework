@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Termin buchen - TeChris</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">TeChris</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="pricing.html">Preise</a>
+          <a href="appointment.html">Termin buchen</a>
+          <a href="about.html">Über uns</a>
+          <a href="contact.html">Kontakt</a>
+          <a href="chatbot.html">Chatbot</a>
+          <a href="login.html">Login</a>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">
+          <span class="burger-line top"></span
+          ><span class="burger-line middle"></span
+          ><span class="burger-line bottom"></span>
+        </button>
+      </div>
+      <div class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Preise</a>
+        <a href="appointment.html">Termin buchen</a>
+        <a href="about.html">Über uns</a>
+        <a href="contact.html">Kontakt</a>
+        <a href="chatbot.html">Chatbot</a>
+        <a href="login.html">Login</a>
+      </div>
+    </nav>
+
+    <main>
+      <form id="appointmentForm">
+        <label for="date">Datum auswählen:</label>
+        <input type="date" id="date" name="date" required /><br />
+        <label for="time">Uhrzeit auswählen:</label>
+        <input type="time" id="time" name="time" required /><br />
+        <label for=betreff">Worum geht es?:</label>
+        <input type="betreff" id="betreff" name="betreff" required /><br />
+        <button type="submit">Termin buchen</button>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2025 TeChris</p>
+        <p>
+          <a href="impressum.html">Impressum</a> | <a href="#">Datenschutz</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/appointment.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/chatbot.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
