@@ -2,6 +2,10 @@ const chatDiv = document.getElementById("chat");
 const userInput = document.getElementById("userInput");
 const typingIndicator = document.getElementById("typingIndicator");
 
+// Einfache Historie für den Chatverlauf
+const history = [];
+const maxHistoryLength = 20;
+
 // Verschieden Begrüßungen des Chatbots
 const greetings = [
   "Hallo! Wie kann ich Ihnen heute helfen? Sie können mich nach den Preisen, Dienstleistungen oder Terminbuchungen fragen.",
@@ -29,7 +33,23 @@ let conversationState = {
 // Die Hauptfunktion um Benutzeranfragen zu verarbeiten
 async function handleUserMessage(message) {
   const lower = message.toLowerCase();
-  let botResponse = "";
+
+  if (
+    lower.includes("was war") ||
+    lower.includes("nochmal") ||
+    lower.includes("wiederholen") ||
+    lower.includes("letzte frage")
+  ) {
+    const lastUserMessageEntry = history
+      .slice()
+      .reverse()
+      .find((entry) => entry.type === "user");
+    if (lastUserMessageEntry) {
+      return `Ihre letzte Frage war: "${lastUserMessageEntry.message}". Wie kann ich Ihnen weiterhelfen?`;
+    } else {
+      return "Es tut mir leid, ich kann Ihre letzte Frage nicht finden. Wie kann ich Ihnen helfen?";
+    }
+  }
 
   // Setzt den aktuellen Zustand der Konversation zurück, wenn bestimmte Schlüsselwörter erkannt werden
   if (
@@ -152,6 +172,18 @@ async function sendMessage() {
   if (userText === "") {
     return;
   }
+  if (
+    !userText.toLowerCase().includes("was war") &&
+    !userText.toLowerCase().includes("nochmal") &&
+    !userText.toLowerCase().includes("wiederholen") &&
+    !userText.toLowerCase().includes("letzte frage")
+  ) {
+    history.push({ type: "user", message: userText });
+  }
+
+  if (history.length > maxHistoryLength) {
+    history.splice(0, history.length - maxHistoryLength);
+  }
 
   displayMessage(userText, "user");
   userInput.value = "";
@@ -167,6 +199,10 @@ async function sendMessage() {
       typingIndicator.style.display = "none";
     }
     displayMessage(botResponse, "bot");
+    history.push({ type: "bot", message: botResponse });
+    if (history.length > maxHistoryLength) {
+      history.splice(0, history.length - maxHistoryLength);
+    }
   }, 700);
 }
 
@@ -177,10 +213,10 @@ userInput.addEventListener("keypress", function (event) {
   }
 });
 
-// Initial Begrüßungsnachricht anzeigen, wenn die Seite geladen wird
+// Initial Begrüßungsnachricht anzeigen, wenn die Seite geladen wird und den Chatverlauf aktualisieren
 document.addEventListener("DOMContentLoaded", () => {
-  displayMessage(
-    greetings[Math.floor(Math.random() * greetings.length)],
-    "bot"
-  );
+  const initialMessage =
+    greetings[Math.floor(Math.random() * greetings.length)];
+  displayMessage(initialMessage, "bot");
+  history.push({ type: "bot", message: initialMessage });
 });

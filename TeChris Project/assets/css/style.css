@@ -115,7 +115,7 @@ p {
 .mobile-nav {
   display: none; /* Standardmäßig ausgeblendet */
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: #dbeafe;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: 15px 20px;
   position: absolute;
@@ -211,6 +211,11 @@ p {
 
 .about-text {
   text-align: left;
+}
+
+.impressum-text {
+  text-align: center;
+  margin-bottom: 20px;
 }
 /* Buttons */
 .btn {
