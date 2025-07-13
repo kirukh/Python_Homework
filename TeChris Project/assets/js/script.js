@@ -1,3 +1,12 @@
+/* TeChris Project
+    Erstellt von: Stremel Christian
+    E-Mail: christian.stremel@stud.th-deg.de
+    Matrikelnummer: 22300994
+    Version: 1.0
+    Erstellt am: 01.05.2025
+    Letzte Aktualisierung: 13.07.2025
+*/
+
 // Dieses Skript wird ausgeführt, sobald die Webseite vollständig geladen ist.
 document.addEventListener("DOMContentLoaded", function () {
   // Logik für die Navigation und das Menü
@@ -31,6 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// Logik für die mobile Navigation
+// Diese Funktion ermöglicht das Öffnen und Schließen des mobilen Menüs
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById("menu-toggle");
   const mobileNav = document.getElementById("mobile-nav");
@@ -40,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
     menuToggle.addEventListener("click", function () {
       menuToggle.classList.toggle("active");
       mobileNav.classList.toggle("active");
-      // Optional: Verhindert Scrollen des Bodys, wenn die mobile Nav geöffnet ist
       document.body.classList.toggle("no-scroll");
     });
 
@@ -57,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// Logik für die Navigation
 document.addEventListener("DOMContentLoaded", function () {
   // Holen Sie sich alle Navigationslinks
   const navLinks = document.querySelectorAll(".nav-links a, .mobile-nav a");
@@ -64,16 +75,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // Holen Sie sich den aktuellen Pfadnamen der URL (z.B. "/services.html")
   const currentPath = window.location.pathname.split("/").pop(); // Gibt "index.html", "services.html" etc. zurück
 
-  // Standardfall: Wenn currentPath leer ist (z.B. bei der Root-URL),
-  // setzen wir es auf "index.html", um den Home-Link zu aktivieren.
   const activePage = currentPath === "" ? "index.html" : currentPath;
 
+  // Fügen Sie die Klasse "active" zum Link hinzu, der der aktuellen Seite entspricht
   navLinks.forEach((link) => {
-    // Entfernen Sie zuerst die "active"-Klasse von allen Links
     link.classList.remove("active");
 
     // Überprüfen Sie, ob die href des Links mit der aktuellen Seite übereinstimmt
-    // (Wir extrahieren nur den Dateinamen aus der href, um Matches zu ermöglichen)
     const linkPath = link.getAttribute("href").split("/").pop();
 
     if (linkPath === activePage) {

@@ -1,3 +1,12 @@
+/* TeChris Project
+    Erstellt von: Stremel Christian
+    E-Mail: christian.stremel@stud.th-deg.de
+    Matrikelnummer: 22300994
+    Version: 1.0
+    Erstellt am: 01.05.2025
+    Letzte Aktualisierung: 13.07.2025
+*/
+
 const chatDiv = document.getElementById("chat");
 const userInput = document.getElementById("userInput");
 const typingIndicator = document.getElementById("typingIndicator");
@@ -34,6 +43,7 @@ let conversationState = {
 async function handleUserMessage(message) {
   const lower = message.toLowerCase();
 
+  // Überprüfen, ob der Benutzer nach der letzten Frage fragt
   if (
     lower.includes("was war") ||
     lower.includes("nochmal") ||
@@ -158,6 +168,7 @@ async function handleUserMessage(message) {
   ];
 }
 
+// Funktion zum Anzeigen von Nachrichten im Chat
 function displayMessage(message, sender) {
   const messageElement = document.createElement("div");
   messageElement.classList.add("chat-message", sender);
@@ -172,6 +183,7 @@ async function sendMessage() {
   if (userText === "") {
     return;
   }
+  // Verhindert, dass die letzte Frage erneut in die Historie aufgenommen wird
   if (
     !userText.toLowerCase().includes("was war") &&
     !userText.toLowerCase().includes("nochmal") &&
@@ -181,10 +193,12 @@ async function sendMessage() {
     history.push({ type: "user", message: userText });
   }
 
+  // Begrenzen der Historie auf die letzten 20 Nachrichten
   if (history.length > maxHistoryLength) {
     history.splice(0, history.length - maxHistoryLength);
   }
 
+  // Nachricht des Benutzers anzeigen und Eingabefeld leeren
   displayMessage(userText, "user");
   userInput.value = "";
 
@@ -194,6 +208,7 @@ async function sendMessage() {
 
   const botResponse = await handleUserMessage(userText);
 
+  // Simuliert eine Verzögerung für die Antwort des Bots
   setTimeout(() => {
     if (typingIndicator) {
       typingIndicator.style.display = "none";

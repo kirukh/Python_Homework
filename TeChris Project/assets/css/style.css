@@ -1,4 +1,13 @@
-/* Body Style (unverändert beibehalten) */
+/* TeChris Project CSS von Stremel Christian
+    Erstellt von: Stremel Christian
+    E-Mail: christian.stremel@stud.th-deg.de
+    Matrikelnummer: 22300994
+    Version: 1.0
+    Erstellt am: 01.05.2025
+    Letzte Aktualisierung: 13.07.2025
+*/
+
+/* Body Style*/
 body {
   font-family: "Arial", "sans-serif";
   line-height: 1.6;
@@ -45,8 +54,8 @@ p {
   background-color: #ffffff;
   padding: 15px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  position: relative; /* Wichtig für die Positionierung der mobilen Nav */
-  z-index: 1000; /* Stellt sicher, dass die Navbar über anderen Inhalten liegt */
+  position: relative;
+  z-index: 1000;
 }
 
 .navbar .container {
@@ -63,7 +72,7 @@ p {
 }
 
 .nav-links {
-  display: flex; /* Sorgt dafür, dass die Links nebeneinander liegen */
+  display: flex;
 }
 
 .nav-links a {
@@ -81,12 +90,11 @@ p {
 
 /* Burger Menu Toggle */
 .menu-toggle {
-  display: none; /* Standardmäßig ausgeblendet auf großen Bildschirmen */
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
   padding: 10px;
-  /* Optional: margin-right, um Abstand zum Rand zu schaffen, wenn nur Logo und Toggle sichtbar sind */
 }
 
 .burger-line {
@@ -95,7 +103,7 @@ p {
   background-color: #4b5563;
   margin: 5px 0;
   transition: all 0.3s ease;
-  display: block; /* Stellt sicher, dass jede Linie sichtbar ist */
+  display: block;
 }
 
 /* Animation für das Burger-Icon zum X */
@@ -113,26 +121,25 @@ p {
 
 /* Mobile Navigation */
 .mobile-nav {
-  display: none; /* Standardmäßig ausgeblendet */
+  display: none;
   flex-direction: column;
   background-color: #dbeafe;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   padding: 15px 20px;
   position: absolute;
-  top: 60px; /* Anpassen an die Höhe deiner Navbar (ca. 15px padding oben + 15px padding unten + Logo/Link-Höhe) */
+  top: 60px;
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  z-index: 999; /* Etwas niedriger als die Navbar, aber über dem Rest des Inhalts */
-  border-top: 1px solid #eee; /* Eine feine Linie zur Trennung von der Navbar */
-  animation: slideDown 0.3s ease-out; /* Optional: Eine kleine Animation beim Öffnen */
+  z-index: 999;
+  border-top: 1px solid #eee;
+  animation: slideDown 0.3s ease-out;
 }
 
 .mobile-nav.active {
   display: flex;
 }
 
-/* Optional: Animation für das Aufklappen */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -149,14 +156,14 @@ p {
   text-decoration: none;
   padding: 10px 0;
   border-bottom: 1px solid #eee;
-  text-align: center; /* Zentriert die Links in der mobilen Nav */
+  text-align: center;
 }
 
 .mobile-nav a:last-child {
   border-bottom: none;
 }
 
-/* Rest deines CSS (Abschnitte, Karten, Buttons, Formulare, Chat, Footer) */
+/* Sections */
 .section {
   padding: 60px 0;
 }
@@ -217,6 +224,7 @@ p {
   text-align: center;
   margin-bottom: 20px;
 }
+
 /* Buttons */
 .btn {
   display: inline-block;
@@ -263,7 +271,6 @@ input[type="email"],
 input[type="password"],
 input[type="date"],
 input[type="time"],
-input[type="betreff"],
 textarea {
   width: calc(100% - 22px);
   padding: 12px 10px;
@@ -278,7 +285,6 @@ input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="date"]:focus,
 input[type="time"]:focus,
-input[type="betreff"]:focus,
 textarea:focus {
   border-color: #3b82f6;
   outline: none;
@@ -402,15 +408,15 @@ button[type="submit"]:hover {
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* Desktop-Nav-Links auf kleinen Bildschirmen ausblenden */
+    display: none;
   }
 
   .menu-toggle {
-    display: block; /* Burger-Icon auf kleinen Bildschirmen anzeigen */
+    display: block;
   }
 
   .navbar .container {
-    flex-wrap: nowrap; /* Verhindert Umbruch des Logos und Toggles */
+    flex-wrap: nowrap;
   }
 
   .hero .grid-2,
@@ -430,10 +436,10 @@ button[type="submit"]:hover {
     margin-top: 30px;
   }
 
-  /* Formular-Anpassungen für kleinere Bildschirme */
+  /* Formular-Anpassungen */
   form {
-    padding: 20px; /* Weniger Padding auf mobilen Geräten */
-    margin: 20px auto; /* Weniger Margin */
+    padding: 20px;
+    margin: 20px auto;
   }
 
   input[type="text"],
@@ -441,13 +447,12 @@ button[type="submit"]:hover {
   input[type="password"],
   input[type="date"],
   input[type="time"],
-  input[type="betreff"],
   textarea {
     width: calc(100% - 22px);
   }
 
   .chat-input-area {
-    flex-direction: column; /* Input und Button untereinander */
+    flex-direction: column;
     align-items: stretch;
     margin-bottom: 20px;
   }
@@ -465,7 +470,6 @@ button[type="submit"]:hover {
   }
 }
 
-/* Zusätzliche Media Query für sehr kleine Bildschirme (optional) */
 @media (max-width: 480px) {
   .container {
     padding: 0 15px;
